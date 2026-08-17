@@ -783,7 +783,7 @@ class BaseSchemaValidator:
         try:
             schema = _load_schema(str(schema_path))
 
-            with open(xml_file, "r") as f:
+            with open(xml_file, "r", encoding="utf-8") as f:
                 xml_doc = lxml.etree.parse(f)
 
             xml_doc, _ = self._remove_template_tags_from_text_nodes(xml_doc)
